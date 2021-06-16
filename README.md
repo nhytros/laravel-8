@@ -4,6 +4,30 @@
 This is a custom version of [Laravel Framework 8](https://www.laravel.com). Based on Laravel >= 8.39.
 This release contains the following features:
 
+
+## External packages
+
+### Staging Packages
+
+### Development Packages
+- [Laravel Debugbar](https://github.com/barryvdh/laravel-debugbar)
+
+### Libraries
+#### Stylesheets
+- Custom Bootstrap based on version 5.0.1
+- Font Awesome Free 5.15.3
+- Custom stylesheet
+
+#### Javascripts
+- Bootstrap 5.0.1
+- CKEditor 5
+- Font Awesome Free 5.15.3
+- JQuery 3.6.0
+
+#### Fonts
+- EasyReading (for a better reading; also for dyslexic people. Enabled for default)
+- Font Awesome Free Fonts
+
 ## TODO and IDEAS
 - Two-Factor Authentication
 - [Impersonate other users](https://mauricius.dev/easily-impersonate-any-user-in-a-laravel-application);
@@ -70,21 +94,6 @@ This release contains the following features:
 
 ### System
 - [Roles and Permissions](https://www.codecheef.org/article/user-roles-and-permissions-tutorial-in-laravel-without-packages)
-
-### Stylesheets
-- Custom Bootstrap based on version 5.0.1
-- Font Awesome Free 5.15.3
-- Custom stylesheet
-
-### Javascripts
-- Bootstrap 5.0.1
-- CKEditor 5
-- Font Awesome Free 5.15.3
-- JQuery 3.6.0
-
-### Fonts
-- EasyReading (for a better reading; also for dyslexic people. Enabled for default)
-- Font Awesome Free Fonts
 
 ### Custom Helper Functions
 - activeLink: check if the current page has the current route and returns the class 'active';

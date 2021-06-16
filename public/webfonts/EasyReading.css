@@ -1,0 +1,12 @@
+@font-face {
+  font-family: 'EasyReading';
+  src: url('easyreading.svg#EasyReading') format('svg'),
+  src: url('easyreading.eot');
+  src: url('easyreading.eot?#iefix') format('embedded-opentype'),
+       url('easyreading.ttf') format('truetype'),
+       url('easyreading.woff') format('woff'),
+       url('easyreading.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
