@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\AuthController;
+use App\Http\Controllers\Auth\PasswordController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -17,13 +18,20 @@ Route::get('/', function () {
     return view('index');
 })->name('home');
 
-Route::view('/auth/login', 'auth.login',['title'=>__('Login')])->name('auth.login');
-Route::post('/auth/login', [AuthController::class, 'login'])->name('auth.postLogin');
-Route::view('/auth/register', 'auth.register',['title'=>__('Register')])->name('auth.register');
-Route::post('/auth/register', [AuthController::class, 'register'])->name('auth.postRegister');
-Route::get('/auth/logout', function(){
-    \Auth::logout();
-    \Session::invalidate();
-    \Session::regenerateToken();
-    return redirect('/');
-})->name('auth.logout');
+Route::prefix('/auth')->group(function(){
+    Route::view('/login', 'auth.login',['title'=>__('Login')])->name('auth.login');
+    Route::post('/login', [AuthController::class, 'login'])->name('auth.postLogin');
+    Route::view('/register', 'auth.register',['title'=>__('Register')])->name('auth.register');
+    Route::post('/register', [AuthController::class, 'register'])->name('auth.postRegister');
+
+    Route::middleware('auth')->group(function(){
+        Route::view('/password/edit', 'auth.password.edit',['title'=>__('Change password')])->name('auth.password.edit');
+        Route::post('/password/update', [PasswordController::class, 'update'])->name('auth.password.update');
+        Route::get('/logout', function(){
+            \Auth::logout();
+            \Session::invalidate();
+            \Session::regenerateToken();
+            return redirect('/');
+        })->name('auth.logout');
+    });
+});

@@ -1,8 +1,8 @@
-@extends('layouts.main')
+@extends('frontend.layouts.main')
 @section('content')
 	<div class="col-md-6 offset-md-3">
 		<div class="card">
-			<div class="h4 card-header">{{__('Edit password')}}</div>
+			<div class="h4 card-header">{{__('Change password')}}</div>
 			<div class="card-text m-2">
 				<form class="row g-3" action="{{route('auth.password.update')}}" method="post"> @csrf
 					<div class="col-md-4">

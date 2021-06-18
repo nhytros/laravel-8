@@ -6,10 +6,10 @@
 			<div class="card-text m-2">
 				<form class="row g-3" action="{{route('auth.postLogin')}}" method="post"> @csrf
 					<div class="col-md-12">
-						<label for="username" class="form-label">{{__('Username or E-mail')}}</label>
+						<label for="login" class="form-label">{{__('Username or E-mail')}}</label>
 						<div class="input-group">
 							<span class="input-group-text">@fas('user','fa-fw')</span>
-							<input type="text" class="form-control" name="username" id="username">
+							<input type="text" class="form-control" name="login" id="login">
 						</div>
 					</div>
 					<div class="col-md-12">

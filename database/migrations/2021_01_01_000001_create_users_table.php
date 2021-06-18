@@ -20,7 +20,8 @@ class CreateUsersTable extends Migration
             $table->integer('role')->default(0);
             $table->string('password',60);
             $table->rememberToken();
-            $table->timestamp('last_access')->nullable();
+            $table->datetime('last_login_at')->nullable();
+            $table->string('last_login_ip',15)->nullable();
             $table->timestamps();
             $table->softDeletes();
         });
